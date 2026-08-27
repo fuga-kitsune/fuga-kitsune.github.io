@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    position: relative;
+    color: #2c2420;
+    font-family: 'Ubuntu', Arial, sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    word-spacing: 0.05em;
+}
+
+/* Japanese text uses New Tegomin */
+:lang(ja),
+.jp {
+    font-family: 'New Tegomin', serif;
+    letter-spacing: 0;
+    word-spacing: 0;
+}
+
+/* ── background image + blur + dark overlay ── */
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: url('image.png') center center / cover;
+    filter: blur(4px) brightness(0.55);
+    transform: scale(1.05); /* prevents blur edge bleed */
+}
+
+a {
+    color: #2c2420;
+}
+
+.page {
+    width: 90%;
+    max-width: 900px;
+    margin: 35px auto;
+}
+
+/* ── header ── */
+
+header {
+    border: 1px solid #8b6f5e;
+    padding: 25px;
+    background: rgba(253, 248, 244, 0.90);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #3d2b1f;
+}
+
+header p {
+    margin: 5px 0 0;
+    color: #8b6f5e;
+}
+
+nav {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dotted #c4a882;
+}
+
+nav a {
+    margin-right: 18px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #5c3d2e;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ── main ── */
+
+main {
+    margin-top: 25px;
+}
+
+.hero {
+    padding: 35px 10px;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin: 0 0 10px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.hero p {
+    max-width: 650px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.05rem;
+}
+
+/* ── grid ── */
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* ── sections ── */
+
+section {
+    border: 1px solid #c4a882;
+    background: rgba(253, 248, 244, 0.90);
+    padding: 22px;
+}
+
+section h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #3d2b1f;
+}
+
+.about {
+    margin-top: 20px;
+}
+
+/* ── blog links ── */
+
+.blog-link {
+    border-top: 1px dotted #c4a882;
+    padding: 15px 0;
+}
+
+.blog-link:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.blog-link h4 {
+    margin: 0 0 4px;
+}
+
+.blog-link p {
+    margin: 0;
+    color: #8b6f5e;
+    font-size: 0.92rem;
+}
+
+.coming-soon {
+    color: #a8896e;
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+
+/* ── tags ── */
+
+.tag {
+    display: inline-block;
+    border: 1px solid #c4a882;
+    padding: 1px 7px;
+    margin: 8px 4px 0 0;
+    font-size: 0.75rem;
+    color: #5c3d2e;
+    background: #faf3ec;
+}
+
+/* ── contact ── */
+
+.contact {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact a {
+    margin: 0 8px;
+    color: #5c3d2e;
+}
+
+/* ── footer ── */
+
+footer {
+    text-align: center;
+    margin: 35px 0;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.8rem;
+}
+
+/* ── responsive ── */
+
+@media (max-width: 650px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+}
